@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Playlist Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .playlist-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .playlist {
+            flex: 1;
+            margin: 0 10px;
+        }
+        .playlist img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .playlist img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Your Playlists</h1>
+    <img src="your-top-image-url.jpg" alt="Top Image" style="width:100%; height: auto; border-radius: 8px; margin-bottom: 20px;">
+
+    <div class="playlist-row">
+        <div class="playlist">
+            <a href="https://www.your-link-for-big-3-playlist" target="_blank">
+                <img src="your-image-url-for-big3.jpg" alt="Big 3 Playlist">
+            </a>
+            <p>Big 3️⃣</p>
+        </div>
+        <div class="playlist">
+            <a href="https://www.your-link-for-in-love-playlist" target="_blank">
+                <img src="your-image-url-for-inlove.jpg" alt="In Love Playlist">
+            </a>
+            <p>In Love 💝</p>
+        </div>
+        <div class="playlist">
+            <a href="https://www.your-link-for-idk-playlist" target="_blank">
+                <img src="your-image-url-for-idk.jpg" alt="IDK Playlist">
+            </a>
+            <p>🤷‍♂️</p>
+        </div>
+    </div>
+
+    <div>
+        <h2>Select a Playlist Type:</h2>
+        <button onclick="location.href='https://www.youtube.com/';">YouTube</button>
+        <button onclick="location.href='https://www.spotify.com/';">Spotify</button>
+    </div>
+</div>
+
+</body>
+</html>
