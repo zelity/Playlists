@@ -5,37 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Playlist Display</title>
     <style>
+        /* Background and body styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            text-align: center;
+            background-image: url('your-background-image-url.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            color: #fff;
         }
+
         .container {
             max-width: 800px;
             margin: auto;
             padding: 20px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            border-radius: 10px;
         }
+
         h1 {
             margin-bottom: 20px;
+            font-size: 2.5em;
         }
+
         .playlist-row {
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
         }
+
         .playlist {
             flex: 1;
             margin: 0 10px;
         }
+
         .playlist img {
             width: 100%;
             height: auto;
             cursor: pointer;
             border-radius: 8px;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         }
+
         .playlist img:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        h2 {
+            margin-top: 40px;
+            font-size: 1.8em;
+        }
+
+        button {
+            background-color: #ff4757;
+            color: #fff;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #ff6b81;
         }
     </style>
 </head>
@@ -66,11 +109,9 @@
         </div>
     </div>
 
-    <div>
-        <h2>Select a Playlist Type:</h2>
-        <button onclick="location.href='https://www.youtube.com/';">YouTube</button>
-        <button onclick="location.href='https://www.spotify.com/';">Spotify</button>
-    </div>
+    <h2>Select a Playlist Type:</h2>
+    <button onclick="location.href='https://www.youtube.com/';">YouTube</button>
+    <button onclick="location.href='https://www.spotify.com/';">Spotify</button>
 </div>
 
 </body>
