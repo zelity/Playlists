@@ -3,130 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Playlist Display</title>
+    <title>WiFi Password Display</title>
     <style>
-        /* Background and body styles */
         body {
             font-family: Arial, sans-serif;
-            background-image: url('your-background-image-url.jpg'); /* Replace with your background image URL */
-            background-size: cover;
-            background-position: center;
-            margin: 0;
-            padding: 0;
-            color: #fff;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-            border-radius: 10px;
-        }
-
-        h1 {
-            margin-bottom: 20px;
-            font-size: 2.5em;
-        }
-
-        .playlist-row {
+            background-color: #f4f4f4;
+            color: #333;
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
-
-        .playlist {
-            flex: 1;
-            margin: 0 10px;
-        }
-
-        .playlist img {
-            width: 100%;
-            height: auto;
-            cursor: pointer;
+        .container {
+            background-color: #fff;
+            padding: 20px;
             border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-
-        .playlist img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        .wifi-info {
+            font-size: 24px;
+            margin: 10px 0;
         }
-
-        p {
-            margin-top: 10px;
-            font-size: 1.2em;
+        .password {
+            font-weight: bold;
+            font-size: 20px;
+            margin: 10px 0;
         }
-
-        h2 {
-            margin-top: 40px;
-            font-size: 1.8em;
-        }
-
         button {
-            background-color: #ff4757;
-            color: #fff;
+            background-color: #007bff;
+            color: white;
             border: none;
-            padding: 15px 25px;
+            padding: 10px 20px;
             border-radius: 5px;
-            font-size: 1.2em;
             cursor: pointer;
-            transition: background-color 0.3s;
-            margin: 10px;
+            font-size: 16px;
         }
-
         button:hover {
-            background-color: #ff6b81;
+            background-color: #0056b3;
         }
-
-        /* Hide by default */
-        #topImage, #playlistOptions {
-            display: none;
+        #copyMessage {
+            margin-top: 10px;
+            color: green;
         }
     </style>
-    <script>
-        function showOptions() {
-            // Show top image and buttons
-            document.getElementById('topImage').style.display = 'block';
-            document.getElementById('playlistOptions').style.display = 'block';
-        }
-    </script>
 </head>
 <body>
-
-<div class="container">
-    <h1>Your Playlists</h1>
-    <img id="topImage" src="your-top-image-url.jpg" alt="Top Image" style="width:100%; height: auto; border-radius: 8px; margin-bottom: 20px;">
-
-    <div class="playlist-row">
-        <div class="playlist">
-            <a href="https://www.your-link-for-big-3-playlist" target="_blank" onclick="showOptions()">
-                <img src="your-image-url-for-big3.jpg" alt="Big 3 Playlist">
-            </a>
-            <p>Big 3️⃣</p>
-        </div>
-        <div class="playlist">
-            <a href="https://www.your-link-for-in-love-playlist" target="_blank" onclick="showOptions()">
-                <img src="your-image-url-for-inlove.jpg" alt="In Love Playlist">
-            </a>
-            <p>In Love 💝</p>
-        </div>
-        <div class="playlist">
-            <a href="https://www.your-link-for-idk-playlist" target="_blank" onclick="showOptions()">
-                <img src="your-image-url-for-idk.jpg" alt="IDK Playlist">
-            </a>
-            <p>🤷‍♂️</p>
-        </div>
+    <div class="container">
+        <div class="wifi-info">WiFi Name: <strong>Verizon_QL4STJ</strong></div>
+        <div class="password" id="wifiPassword">Password: alike7-van-tram</div>
+        <button onclick="copyPassword()">Copy Password</button>
+        <div id="copyMessage"></div>
     </div>
 
-    <div id="playlistOptions">
-        <h2>Select a Playlist Type:</h2>
-        <button onclick="location.href='https://www.youtube.com/';">YouTube</button>
-        <button onclick="location.href='https://www.spotify.com/';">Spotify</button>
-    </div>
-</div>
-
+    <script>
+        function copyPassword() {
+            const passwordText = document.getElementById('wifiPassword').innerText.replace('Password: ', '');
+            navigator.clipboard.writeText(passwordText).then(() => {
+                const copyMessage = document.getElementById('copyMessage');
+                copyMessage.innerText = 'Password copied to clipboard!';
+                setTimeout(() => {
+                    copyMessage.innerText = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
 </body>
 </html>
